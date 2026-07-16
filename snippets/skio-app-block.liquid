@@ -49,7 +49,7 @@
   >
     {%- assign resolved_form_id = block.settings.form_id -%}
     {%- if resolved_form_id == blank or resolved_form_id contains '{{' -%}
-      {%- assign resolved_form_id = 'shop-form-' | append: section.id -%}
+      {%- assign resolved_form_id = 'product-form-' | append: section.id -%}
     {%- endif -%}
     <input type='hidden' name='selling_plan' form='{{ resolved_form_id }}'>
   </{{ block.settings.element_name }}>

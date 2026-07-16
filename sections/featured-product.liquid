@@ -95,7 +95,7 @@
             data-section="{{ section.id }}"
             data-url="{{ product.url }}"
           >
-            {%- assign product_form_id = 'shop-form-' | append: section.id -%}
+            {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
             {%- for block in section.blocks -%}
               {%- case block.type -%}

@@ -47,7 +47,11 @@
       selectedVariant='{{ product.selected_or_first_available_variant | json | escape }}'
     {% endif %}
   >
-    <input type='hidden' name='selling_plan' form='{{ block.settings.form_id }}'>
+    {%- assign resolved_form_id = block.settings.form_id -%}
+    {%- if resolved_form_id == blank or resolved_form_id contains '{{' -%}
+      {%- assign resolved_form_id = 'shop-form-' | append: section.id -%}
+    {%- endif -%}
+    <input type='hidden' name='selling_plan' form='{{ resolved_form_id }}'>
   </{{ block.settings.element_name }}>
 
   <script src='{{ 'skio-plan-picker-component.js' | asset_url }}' type='module'></script>

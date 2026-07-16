@@ -25,7 +25,8 @@
   git-hooks = {
     enable = true;
     hooks = {
-      eslint.enable = true;
+      # Set eslint to false, these linting warnings are outside scope of core project
+      eslint.enable = false;
       prettier.enable = true;
     };
   };

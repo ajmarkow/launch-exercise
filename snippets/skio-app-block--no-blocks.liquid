@@ -1,0 +1,82 @@
+{% comment %}
+  Usage:
+    {% render 'skio-app-block--no-blocks', product: product, product_form_id: product_form_id %}
+{% endcomment %}
+
+{% liquid
+assign product_form_id_default = 'product-form-' | append: section.id
+assign product_form_id = product_form_id | default: product_form_id_default
+%}
+<style>
+  skio-plan-picker {
+    --skio-group-border-radius: 5px;
+    --skio-group-border-width: 2px;
+    --skio-group-border-color: #ccc;
+    --skio-group-border-selected-color: #200039BF;
+    --skio-group-background-color: transparent;
+    --skio-group-background-selected-color: transparent;
+    --skio-group-text-color: #121212; 
+    --skio-group-text-selected-color: #121212;
+    --skio-discount-color: #fff; 
+    --skio-discount-text-color: #000; 
+    --skio-button-plan-selector-width: 100px;
+  }
+</style>
+
+{% capture skio_settings %}
+  {
+    "form_id":{{ product_form_id | json }},
+    "external_price_selector":".price-item--regular",
+    "show_details":false,
+    "show_without_subscription":false,
+    "show_compare_price":false,
+    "legend_content":"Select subscription plan",
+    "show_legend":false,
+    "layout":"horizontal",
+    "dropdownPosition":"inside",
+    "additional_frequency_label":null,
+    "start_onetime":true,
+    "onetime_first":true,
+    "group_border_radius":0,
+    "group_border_width":0,
+    "group_border_color":"#000",
+    "group_border_selected_color":"#000",
+    "group_background_color":"transparent",
+    "selected_group_background_color":"transparent",
+    "group_text_color":"#000",
+    "group_selected_text_color":"#000",
+    "show_radio_selector":true,
+    "onetime_title":"One-time purchase",
+    "subscription_title":"Subscribe",
+    "prepaid_title":"Prepaid",
+    "discount_format":"percent",
+    "discount_style":"text",
+    "discount_text":"& Save [discount]",
+    "discount_color":"#fff",
+    "discount_text_color":"#000",
+    "additional_subscription_content":null,
+    "selector_type":"dropdown",
+    "button_plan_selector_width":100,
+    "default_subscription":"Every 2 Months",
+    "future_price_adjustments_text":"\u003csmall\u003eThen [discount] off after the [order_count_ordinal] order\u003c\/small\u003e",
+    "element_name":"skio-plan-picker",
+    "product_handle":"",
+    "combine_groups":false,
+    "combined_group_name":"Subscription"
+  }
+
+{% endcapture %}
+
+{% assign skioSellingPlanGroups = product.selling_plan_groups | where: 'app_id', 'SKIO' %}
+{% if skioSellingPlanGroups.size > 0 %}
+  <skio-plan-picker key="plan-picker-{{ product.id }}" 
+    options='{{ skio_settings | strip_newlines }}'
+    product='{{ product | json | escape }}' 
+    layout="vertical"
+    selectedVariant='{{ product.selected_or_first_available_variant | json | escape }}'>
+      <input type='hidden' name='selling_plan' form='{{ product_form_id }}'>
+  </skio-plan-picker>
+  <input type="hidden" name="id" form='{{ product_form_id }}'
+      value="{{ product.selected_or_first_available_variant.id }}" />
+  <script src='{{ ' skio-plan-picker-component.js' | asset_url }}' type='module'></script>
+{% endif %}

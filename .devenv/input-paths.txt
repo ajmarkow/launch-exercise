@@ -1,0 +1,8 @@
+/Users/ajmarkow/Documents/launch-engineer-exercise/.devenv/bootstrap/bootstrapLib.nix
+/Users/ajmarkow/Documents/launch-engineer-exercise/.devenv/bootstrap/default.nix
+/Users/ajmarkow/Documents/launch-engineer-exercise/.devenv/bootstrap/resolve-lock.nix
+/Users/ajmarkow/Documents/launch-engineer-exercise/devenv.local.nix
+/Users/ajmarkow/Documents/launch-engineer-exercise/devenv.lock
+/Users/ajmarkow/Documents/launch-engineer-exercise/devenv.nix
+/Users/ajmarkow/Documents/launch-engineer-exercise/devenv.yaml
+/Users/ajmarkow/Documents/launch-engineer-exercise/.env

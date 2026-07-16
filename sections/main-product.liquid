@@ -139,7 +139,6 @@
                     {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
                       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                       {{ form | payment_terms }}
-                    {% render 'skio-app-block', block: block, product: product %}
                     {%- endform -%}
                   </div>
                 {%- when 'inventory' -%}

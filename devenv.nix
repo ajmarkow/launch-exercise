@@ -29,7 +29,10 @@
       prettier.enable = true;
     };
   };
-
+# Adding env variable for store URL so I don't have to use url flag with Shopify CLI
+  env = {
+    SHOPIFY_FLAG_STORE = "skio-launch-testing.myshopify.com";
+  };
   # See full reference at https://devenv.sh/reference/options/
 }
 

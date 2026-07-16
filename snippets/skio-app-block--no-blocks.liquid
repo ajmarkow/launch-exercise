@@ -78,5 +78,5 @@ assign product_form_id = product_form_id | default: product_form_id_default
   </skio-plan-picker>
   <input type="hidden" name="id" form='{{ product_form_id }}'
       value="{{ product.selected_or_first_available_variant.id }}" />
-  <script src='{{ ' skio-plan-picker-component.js' | asset_url }}' type='module'></script>
+  <script src='{{ 'skio-plan-picker-component.js' | asset_url }}' type='module'></script>
 {% endif %}

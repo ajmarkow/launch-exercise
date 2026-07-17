@@ -626,7 +626,6 @@ export class SkioPlanPicker extends LitElement {
   sellingPlanDropdown(group) {
     return html`
       <select
-        id="selling-plan-dropdown-${group.id}"
         class="selling-plan-dropdown ${this.getAvailableSellingPlans(group)
           .length == 1
           ? "selling-plan-dropdown--one"

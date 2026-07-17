@@ -18,7 +18,7 @@ if (!customElements.get("product-form")) {
           this.submitButton.setAttribute("aria-haspopup", "dialog");
         }
 
-        this.hideErrors = this.dataset.hideErrors === "false";
+        this.hideErrors = this.dataset.hideErrors === "true";
       }
 
       onSubmitHandler(evt) {

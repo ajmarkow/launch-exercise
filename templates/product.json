@@ -38,6 +38,19 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "skio_plan_picker": {
+          "type": "skio-plan-picker",
+          "settings": {
+            "form_id": "product-form-{{section.id}}",
+            "default_subscription": "2 months",
+            "onetime_title": "One-time purchase",
+            "onetime_first": false,
+            "start_onetime": false,
+            "subscription_title": "Subscribe",
+            "layout": "vertical",
+            "selector_type": "dropdown"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -61,6 +74,7 @@
         "title",
         "price",
         "variant_picker",
+        "skio_plan_picker",
         "quantity_selector",
         "buy_buttons",
         "description",

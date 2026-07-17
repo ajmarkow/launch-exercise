@@ -134,7 +134,6 @@
                       {%- endif -%}
                     </div>
                   {%- endif -%}
-                  {% render 'skio-app-block--no-blocks', product: product, product_form_id: product_form_id %}
                   <div {{ block.shopify_attributes }}>
                     {%- form 'product', product, class: 'installment caption-large' -%}
                       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
@@ -491,6 +490,7 @@
                     block: block,
                     product_form_id: product_form_id
                   %}
+                  {% render 'skio-app-block--no-blocks', product: product, product_form_id: product_form_id %}
                 {%- when 'buy_buttons' -%}
                   {%- render 'buy-buttons',
                     block: block,

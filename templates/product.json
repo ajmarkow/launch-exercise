@@ -48,7 +48,8 @@
             "start_onetime": false,
             "subscription_title": "Subscribe",
             "layout": "vertical",
-            "selector_type": "dropdown"
+            "selector_type": "dropdown",
+            "external_price_selector": "div.price__regular > span.price-item.price-item--regular"
           }
         },
         "buy_buttons": {

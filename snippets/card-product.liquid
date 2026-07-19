@@ -310,6 +310,8 @@
                     aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                     data-product-url="{{ card_product.url }}"
                   >
+                                      {% render 'skio-app-block--no-blocks.liquid', product: product, product_form_id: product_form_id, debug: false %}
+
                     {{ 'products.product.choose_options' | t }}
                     {%- if horizontal_quick_add -%}
                       <span class="icon-wrap">
@@ -327,6 +329,8 @@
                     class="quick-add-modal__content global-settings-popup"
                     tabindex="-1"
                   >
+                                      {% render 'skio-app-block--no-blocks.liquid', product: product, product_form_id: product_form_id, debug: false %}
+
                     <button
                       id="ModalClose-{{ card_product.id }}"
                       type="button"
@@ -356,6 +360,7 @@
                         disabled
                       {% endif %}
                     >
+                    
                     <button
                       id="{{ product_form_id }}-submit"
                       type="submit"

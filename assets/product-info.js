@@ -240,7 +240,11 @@ if (!customElements.get("product-info")) {
             this.setUnavailable();
             return;
           }
-
+          document.dispatchEvent(
+            new CustomEvent("variantChanged", {
+              detail: { variantId: variant.id },
+            }),
+          );
           this.updateMedia(html, variant?.featured_media?.id);
 
           const updateSourceFromDestination = (

@@ -49,7 +49,11 @@
             "subscription_title": "Subscribe",
             "layout": "vertical",
             "selector_type": "dropdown",
-            "external_price_selector": "div.price__regular > span.price-item.price-item--regular"
+            "external_price_selector": "div.price__regular > span.price-item.price-item--regular",
+            "discount_text": "Lock in [discount] off and never run out.",
+            "additional_subscription_content": "Skip, modify or cancel at any time.",
+            "group_border_selected_color": "#f04c00",
+            "group_border_color": "#E2C8B6"
           }
         },
         "buy_buttons": {
